@@ -11,7 +11,6 @@ class Diary:
     def list_entries(self):
         return self.entries
     
-
     def get_best_entry_for_time(self, wpm, minutes):
         available_word_count = wpm * minutes
         longest_viable_count = 0
