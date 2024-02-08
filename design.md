@@ -101,11 +101,9 @@ class DiaryEntry:
         self.title = title
         self.contents = contents
         self.word_count = len(contents.split())
+        self.numbers = []
 
-    def reading_time(self, wpm):
-        pass
-
-    def extract_phone_numbers(self):
+    def read_time(self, wpm):
         pass
 
 class Todo:
@@ -147,14 +145,21 @@ Test Diary class instance initialises with 3 empty lists as expected
 
 """
 Test initialises with instance variables set to arguments as expected
+Without a valid phone number in the contents
+"""
+
+"""
+Test initialises with instance variables set to arguments as expected
+With a valid phone number in the contents
+"""
+
+"""
+Test initialises with instance variables set to arguments as expected
+With 2 valid phone numbers in the contents
 """
 
 """
 Test reading time returns the correct response as an int for minutes (rounded down)
-"""
-
-"""
-Test extract phone number extracts all valid phone numbers in contents and returns them as a list of strings
 """
 
 ## Todo Unit Test Examples
