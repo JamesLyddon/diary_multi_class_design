@@ -11,19 +11,21 @@ class Diary:
     def list_entries(self):
         return self.entries
     
+
     def get_best_entry_for_time(self, wpm, minutes):
-        closest_time = 0
-        closest_entry = None
+        available_word_count = wpm * minutes
+        longest_viable_count = 0
+        longest_viable_entry = None
         for entry in self.entries:
-            current = entry.read_time(wpm)
-            if current == minutes:
+            length = entry.length
+            if length == available_word_count:
                 return entry
-            elif current < minutes and current > closest_time:
-                closest_time = current
-                closest_entry = entry
-        if not closest_entry:
+            elif length < available_word_count and entry.length > longest_viable_count:
+                longest_viable_count = length
+                longest_viable_entry = entry
+        if not longest_viable_entry:
             return "No suitable entry!"
-        return closest_entry
+        return longest_viable_entry
 
     def list_contacts(self):
         return self.contacts

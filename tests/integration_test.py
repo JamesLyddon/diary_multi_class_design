@@ -66,4 +66,4 @@ def test_best_entry():
     assert diary.get_best_entry_for_time(1, 10) == entry_6
     assert diary.get_best_entry_for_time(1, 0) == "No suitable entry!"
     assert diary.get_best_entry_for_time(1, 10) == entry_6
-    # assert diary.get_best_entry_for_time(10, 1) == entry_6
+    assert diary.get_best_entry_for_time(10, 1) == entry_6
